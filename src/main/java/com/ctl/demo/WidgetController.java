@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 
 @RefreshScope
 @RestController
-class MessageRestController {
+class WidgetController {
  
     @Value("${msg:Hello world - Config Server is not working..pelase check}")
     private String msg;
