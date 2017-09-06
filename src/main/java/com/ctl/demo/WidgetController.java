@@ -7,14 +7,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.MediaType;
 
-
-
-@RequestMapping("/api")
+@RefreshScope
 @RestController
-public class WidgetController {
-
-    @RequestMapping(method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-   public String home(){
-        return "Hello Docker World";
+class MessageRestController {
+ 
+    @Value("${msg:Hello world - Config Server is not working..pelase check}")
+    private String msg;
+ 
+    @RequestMapping("/msg")
+    String getMsg() {
+        return this.msg;
     }
+
+
 }
